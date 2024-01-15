@@ -19,7 +19,15 @@ class Winner extends Component {
   }  
 
   async componentDidMount() {
-    await this.loadWeb3()
+    await this.loadWeb3();
+    try{
+      const networkId = await window.ethereum.request({ method: 'net_version' });
+      if( networkId != 80001){
+        showMessage("warning", "Please connect your Metamask account to Polygon test for this project. Thank you");
+      }
+    }catch{
+      showMessage("error", "It seems you're not in Polygon test network into your Metamask account.");
+    }
     if( window.ethereum || window.web3 ){
       await this.loadBlockchainData();
     }

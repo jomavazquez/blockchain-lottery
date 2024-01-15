@@ -20,6 +20,14 @@ class Tokens extends Component {
 
   async componentDidMount() {
     await this.loadWeb3();
+    try{
+      const networkId = await window.ethereum.request({ method: 'net_version' });
+      if( networkId != 80001){
+        showMessage("warning", "Please connect your Metamask account to Polygon test for this project. Thank you");
+      }
+    }catch{
+      showMessage("error", "It seems you're not in Polygon test network into your Metamask account.");
+    }
     if( window.ethereum || window.web3 ){
       await this.loadBlockchainData();
     }
@@ -44,6 +52,8 @@ class Tokens extends Component {
     // Ganache -> 5777, Rinkeby -> 4, BSC -> 97
     const networkId = await web3.eth.net.getId();
     const networkData = smart_contract.networks[ networkId ];
+
+    
 
     if( networkData ){
       const abi = smart_contract.abi;

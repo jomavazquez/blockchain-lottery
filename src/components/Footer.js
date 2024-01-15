@@ -9,19 +9,22 @@ const MyFooter = () => (
               <h6 className="text-uppercase fw-bold mb-4">
                 <strong>About the project</strong>
               </h6>
+              <p>
+                Smart Contract deployed over <strong>Polygon test</strong> network.
+              </p>
               <p className="m-0">
-                Smart Contract deployed over Ganache. Be sure you have this network running in your machine.
+                Be sure you have connected your Metamask account to this.
               </p>
             </div>
-            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase boldmb-4">
-                <strong>Stack</strong>
+                <strong>Stack used</strong>
               </h6>
               <p className="m-0">
-                Solidity, Ganache, React, JS, Mocha for testing.
+                Solidity, Ganache, Binance, Polygon, React, JS, Mocha for testing.
               </p>
             </div>
-            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 <strong>Contact</strong>
               </h6>
